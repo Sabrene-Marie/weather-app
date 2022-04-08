@@ -1,43 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>✨Magic Mirror✨</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lovers+Quarrel&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rye&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Corben&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <div class="container">
+      <div class="weather-app-wrapper">
+        <h1>✨Magic Mirror Weather App✨</h1>
+        <h2>
+          Magic Mirror on the wall... what's the fairest weather of them all?
+        </h2>
+        <form id="search-form">
+          <input
+            type="search"
+            placeholder="Type a city.."
+            class="form-control"
+            id="city-input"
+            autocomplete="off"
+          />
+          <input
+            type="submit"
+            value="✨Summon Weather✨"
+            class="form-control"
+          />
+        </form>
+        <div class="mirror">
+          <div class="mirror-bg">
+            <img
+              width="900px"
+              src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Forig13.deviantart.net%2F2dd2%2Ff%2F2016%2F234%2Fd%2F8%2Fsnow_white_blank_mirror_by_mohammedanis-daeswdr.png&f=1&nofb=1"
+            />
+          </div>
+          <div class="weather-city">
+            <h1 id="city">Sydney</h1>
+          </div>
+          <div class="weather-temp">
+            <strong id="temperature"> </strong>
+            <span class="units">
+              °C |
+              <img
+                src="https://openweathermap.org/img/wn/04d@2x.png"
+                id="icon"
+              />
+            </span>
+          </div>
+          <div class="weather-details">
+            <ul>
+              <li>
+                <h5 id="date">Monday 4:00pm</h5>
+              </li>
+              <li><h5 id="description"></h5></li>
+              <li>
+                <h5>Humidity: <span id="humidity"> 73 </span>%</h5>
+              </li>
+              <li>
+                <h5>Wind: <span id="wind"> 2 </span> km/h</h5>
+              </li>
+            </ul>
+          </div>
+          <button id="current-location-button">✨Current Location✨</button>
+        </div>
+      </div>
+    </div>
+    <script src="src/app.js"></script>
+    <p>
+      <a
+        href="https://github.com/Sabrene-Marie/vanilla-weather-app.git"
+        target="_blank"
+        >Open-source code
+      </a>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+      by Sabrene-Marie Papas
+    </p>
   </body>
 </html>

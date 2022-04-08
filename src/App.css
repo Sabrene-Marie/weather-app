@@ -1,38 +1,145 @@
-.App {
+h1 {
   text-align: center;
+  padding: 40px;
+  font-family: "Fleur De Leah", cursive;
+  font-weight: 500;
+  font-size: 80px;
+  color: white;
+}
+h2 {
+  text-align: center;
+  font-family: "Rye", cursive;
+  color: black;
+}
+h3 {
+  font-size: 70px;
+}
+h4 {
+  text-align: center;
+  font-family: "Rye", cursive;
+}
+p {
+  text-align: center;
+  background-color: gold;
+}
+.mirror {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  padding-bottom: 20%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mirror-bg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.weather-city {
+  position: relative;
+  text-align: center;
+  padding-top: 90px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.weather-temp {
+  position: relative;
+  font-family: "Rye", cursive;
+  font-size: 45px;
+  text-align: center;
+  color: black;
+}
+
+.weather-details {
+  position: relative;
+}
+
+.weather-details ul {
+  padding: 0;
+}
+
+li {
+  position: relative;
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  color: black;
+}
+
+.weather-details h5 {
+  line-height: 80px;
+  font-family: "Rye", cursive;
+  text-transform: capitalize;
+}
+
+.btn {
+  position: relative;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  border-radius: 20px;
+  color: white;
+  background: #4d0f6d;
+  padding: 10px;
+  z-index: 1;
+  position: relative;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: gold;
+  border: black;
+  color: #4d0f6d;
+}
+
+body {
+  background: radial-gradient(
+    circle at 50.4% 50.5%,
+    rgb(251, 32, 86) 0%,
+    rgb(135, 2, 35) 90%
+  );
+}
+
+form {
+  padding: 20px;
+  display: block;
+  margin: 0 auto;
+  border-style: ridge;
+  border-color: gold;
+  background-color: #4d0f6d;
+  color: white;
+  width: 700px;
+  padding: 10px;
+}
+
+.form-control {
+  padding: 10px;
+  background-color: white;
+  outline-color: black;
+}
+
+.form-control:hover {
+  background-color: gold;
+}
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.weather-forecast-date {
+  color: white;
+  font-size: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.weather-forecast-temperature-min {
+  color: white;
+}
+
+.weather-forecast-temperatures {
+  font-size: 16px;
 }
